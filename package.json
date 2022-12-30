@@ -1,0 +1,29 @@
+{
+  "name": "ztabs",
+  "description": "Removes tabs almost entirely from your browsing experience.",
+  "version": "1.0.0",
+  "license": "LGPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nate-wilkins/ztabs.git"
+  },
+  "scripts": {
+    "clean": "rm -rf ./dist/",
+    "build": "yarn run clean && tsc --build && convert -background none -density 1200 -resize 128x128 src/icon.svg dist/icon_128.png && cp ./src/manifest.json ./dist/",
+    "publish": "rm package.zip && zip -r package.zip dist/",
+    "lint": "eslint ./src/**/*"
+  },
+  "dependencies": {
+    "@types/chrome": "0.0.206",
+    "@types/node": "16.11.21",
+    "@typescript-eslint/eslint-plugin": "4.22.0",
+    "@typescript-eslint/parser": "4.22.0",
+    "eslint": "7.17.0",
+    "eslint-plugin-jsort": "1.1.2",
+    "eslint-plugin-prettier": "4.0.0",
+    "prettier": "2.5.1",
+    "typescript": "4.5.5",
+    "webpack": "5.67.0"
+  },
+  "devDependencies": {}
+}

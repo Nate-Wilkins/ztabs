@@ -1,0 +1,40 @@
+{
+  "name": "ztabs",
+  "version": "1.0.0",
+  "description": "Removes tabs almost entirely from your browsing experience.",
+  "manifest_version": 3,
+  "icons": {
+    "128": "./icon_128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "js": ["scripts/insert_progress_bar_pace.js", "scripts/progress_bar_pace.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [ "scripts/progress_bar_pace.js" ],
+      "matches": [ "https://*/*" ]
+    }
+  ],
+  "action": {},
+  "host_permissions": ["<all_urls>"],
+  "permissions": [
+    "scripting",
+    "activeTab",
+    "tabs"
+  ],
+  "commands": {
+    "toggle-popup-mode": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+L"
+      },
+      "description": "Show/hide navigation bar"
+    }
+  }
+}

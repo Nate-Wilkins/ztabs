@@ -1,0 +1,11 @@
+.*
+!.tool-versions
+!.envrc.sh
+!.editorconfig
+!.eslintignore
+!.eslintrc.js
+!.gitignore
+
+node_modules/
+dist/
+package.zip
