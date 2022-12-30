@@ -18,7 +18,7 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": [ "client/client.js" ],
+      "resources": [ "client.js" ],
       "matches": [ "https://*/*" ]
     }
   ],

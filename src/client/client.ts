@@ -1,2 +1,3 @@
-import 'pace-js';
-import 'pace-js/pace-theme-default.css';
+import pace from 'pace-js';
+
+pace.start();

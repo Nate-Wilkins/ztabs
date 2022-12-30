@@ -1,27 +1,20 @@
+import styles from 'pace-js/pace-theme-default.css';
 import { EntryPoints } from '../entry_points';
 
 // When the page loads, inject the progress bar.
 document.addEventListener('DOMContentLoaded', () => {
   const elementHead = document.getElementsByTagName('head')[0];
   if (!elementHead) {
-    console.log(`[ztabs] Unable to attach progress bar.`);
+    console.log(`[ztabs] Unable to attach client.`);
     return;
   }
 
-  // Inject Pace.
+  // Inject client.
   (() => {
-    // StyleSheet.
-    const elementStylePace = document.createElement('style');
-    elementStylePace.innerHTML =
-      '\n' +
-      '/*!\n' +
-      ' * pace.js v1.2.4 | Default theme\n' +
-      ' * https://github.com/CodeByZach/pace/\n' +
-      ' * Licensed MIT © HubSpot, Inc.\n' +
-      ' */\n' +
-      '.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#d72630;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}A\n' +
-      '';
-    elementHead.prepend(elementStylePace);
+    // Styles.
+    // NOTE: Loading pace-js styles here because another loaded event listern
+    //       would need to be added if it was done in the client.
+    styles.use();
 
     // Script.
     const elementScriptPace = document.createElement('script');

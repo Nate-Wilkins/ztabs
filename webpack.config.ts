@@ -3,6 +3,16 @@ import CircularDependencyPlugin from 'circular-dependency-plugin';
 import path from 'path';
 import { EntryPoints } from './src/entry_points';
 
+const styleLoaderInjectInto = function insertIntoTarget(
+  // @ts-ignore
+  element,
+  // @ts-ignore
+  options,
+) {
+  const parent = options.target || document.head;
+  parent.prepend(element);
+};
+
 module.exports = {
   entry: {
     background: path.resolve(__dirname, EntryPoints.background.input),
@@ -43,7 +53,13 @@ module.exports = {
       {
         test: /\.(css)$/,
         use: [
-          'style-loader',
+          {
+            loader: 'style-loader',
+            options: {
+              injectType: 'lazyStyleTag',
+              insert: styleLoaderInjectInto,
+            },
+          },
           {
             loader: 'css-loader',
             options: {
@@ -52,12 +68,23 @@ module.exports = {
             },
           },
         ],
-        exclude: /\.?global\.css$/,
+        exclude: /(\.?global\.css|.*pace-js.*.css)$/,
       },
       {
         test: /\.(css)$/,
-        use: ['style-loader', 'css-loader'],
-        include: /\.?global\.css$/,
+        use: [
+          {
+            loader: 'style-loader',
+            options: {
+              injectType: 'lazyStyleTag',
+              insert: styleLoaderInjectInto,
+            },
+          },
+          {
+            loader: 'css-loader',
+          },
+        ],
+        include: /(\.?global\.css|.*pace-js.*.css)$/,
       },
       {
         test: /\.(jpg|jpeg|png|gif|mp3|svg|gltf|fbx)$/,
