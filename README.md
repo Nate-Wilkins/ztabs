@@ -1,9 +1,5 @@
 # ztabs
 
-# TODO:
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/mdndkociaebjkggmhnemegoegnbfbgoo.svg)](https://chrome.google.com/webstore/detail/tab-less/mdndkociaebjkggmhnemegoegnbfbgoo)
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/stars/mdndkociaebjkggmhnemegoegnbfbgoo.svg)](https://chrome.google.com/webstore/detail/tab-less/mdndkociaebjkggmhnemegoegnbfbgoo)
-
 > Zero Tabs: Removes tabs almost entirely from your browsing experience.
 
 Why?
