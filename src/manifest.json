@@ -12,7 +12,7 @@
   "content_scripts": [
     {
       "matches": ["https://*/*", "http://*/*"],
-      "js": ["client/inject.js", "client/client.js"],
+      "js": ["inject.js", "client.js"],
       "run_at": "document_start"
     }
   ],

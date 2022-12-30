@@ -21,6 +21,7 @@ Please take a look at `package.json:scripts` for more information on development
 ## TODO:
 
 - Theme support.
+- Automatic entry point population in manifest file.
 
 ## Authors
 
