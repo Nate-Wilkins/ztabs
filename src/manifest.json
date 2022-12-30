@@ -1,7 +1,7 @@
 {
-  "name": "ztabs",
-  "version": "1.0.0",
-  "description": "Removes tabs almost entirely from your browsing experience.",
+  "name": "{{name}}",
+  "version": "{{version}}",
+  "description": "{{description}}",
   "manifest_version": 3,
   "icons": {
     "128": "./icon_128.png"
@@ -12,13 +12,13 @@
   "content_scripts": [
     {
       "matches": ["https://*/*", "http://*/*"],
-      "js": ["scripts/insert_progress_bar_pace.js", "scripts/progress_bar_pace.js"],
+      "js": ["client/inject.js", "client/client.js"],
       "run_at": "document_start"
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": [ "scripts/progress_bar_pace.js" ],
+      "resources": [ "client/client.js" ],
       "matches": [ "https://*/*" ]
     }
   ],

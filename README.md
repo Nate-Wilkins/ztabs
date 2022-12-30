@@ -18,6 +18,10 @@ It pairs very nicely with these other plugins:
 
 Please take a look at `package.json:scripts` for more information on development.
 
+## TODO:
+
+- Theme support.
+
 ## Authors
 
 - Nate-Wilkins <nate-wilkins@code-null.com>

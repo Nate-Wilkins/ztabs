@@ -4,6 +4,8 @@
 // - iainbeeston
 // // // // // // // // // // // // // // // // // // // //
 
+import { EntryPoints } from '../entry_points';
+
 // // // // // Actions  // // // // // // // // // // // //
 // /
 
@@ -125,7 +127,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   console.log(`[ztabs]: injecting progress bar.`);
 
   chrome.scripting.executeScript({
-    files: ['scripts/insert_progress_bar_pace.js'],
+    files: [EntryPoints.inject.output],
     target: { tabId },
   });
 });
