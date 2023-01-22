@@ -36,8 +36,7 @@ const tabDetach = (
 const chromeTabsDetachAll = () => {
   chrome.tabs.query({}, tabs => {
     tabs.forEach(tab => {
-      const tabType = 'popup';
-      tabDetach(tab, tabType);
+      tabDetach(tab, 'popup');
     });
   });
 };
