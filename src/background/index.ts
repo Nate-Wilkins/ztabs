@@ -96,15 +96,8 @@ chrome.runtime.onStartup.addListener(() => {
 /*
  * When a tab is created, detach that tab.
  */
-chrome.tabs.onCreated.addListener(() => {
-  chrome.windows.getCurrent(win => {
-    chrome.tabs.query({ windowId: win.id }, tabs => {
-      const tab = tabs.filter(tab => {
-        return tab.active;
-      })[0];
-      tabDetach(tab, 'popup');
-    });
-  });
+chrome.tabs.onCreated.addListener(tab => {
+  tabDetach(tab, 'popup');
 });
 
 /*
